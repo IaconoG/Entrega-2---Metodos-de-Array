@@ -64,9 +64,11 @@ const imprimirPizzasIDImpar = (pizzas) => {
   pizzas.forEach((pizza) => {
     if (pizza.id % 2 !== 0) {
       console.log(
-        pizza.nombre + "\na ",
-        pizza.precio,
-        "\nIngredientes: ",
+        "La " +
+          pizza.nombre +
+          " tiene un precio de " +
+          pizza.precio +
+          ".\nIngredientes: ",
         pizza.ingredientes.join(", ")
       );
     }
@@ -78,14 +80,14 @@ imprimirPizzasIDImpar(pizzas);
 const hayPizzasConValorMenorASeisientos = (pizzas) => {
   listaDePizzasVacia(pizzas);
 
-  const pizzasCumplenCondicion = pizzas.filter((pizza) => pizza.precio < 1600);
+  const pizzasCumplenCondicion = pizzas.filter((pizza) => pizza.precio < 600);
   const strNombrePizzasQueCumplenCondiciona = pizzasCumplenCondicion
     .map((pizzas) => pizzas.nombre)
     .join("\n- ");
 
   if (pizzasCumplenCondicion.length > 0) {
     console.log(
-      "Si hay pizas que sean menor a 600, tales como \n-",
+      "Si existen pizas que sean menor a 600, tales como \n-",
       strNombrePizzasQueCumplenCondiciona
     );
   } else {
